@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:Custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/detail_back"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="10dp" >
+
+        <ImageView
+            android:id="@+id/iv_play_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/arrow_right_normal" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+   
+	<!-- 歌词视图 -->
+	<!--  <com.example.nature.view.LrcView  
+    	android:id="@+id/lrcShowView"  
+    	android:layout_width="match_parent"  
+    	android:layout_height="0dip"
+        android:layout_weight="9"
+        android:gravity="center_vertical"/> -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_play_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="8"
+        android:background="@android:color/transparent"
+        android:overScrollMode="never" 
+        />
+        
+
+    
+
+    <LinearLayout
+        android:id="@+id/llProgress"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tvTimeElapsed"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:text="00:00" />
+
+        <SeekBar
+            android:id="@+id/pbDuration"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dip"
+            android:layout_height="10dip"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="6"
+            android:maxHeight="1dip"
+            android:minHeight="1dip"
+            android:progressDrawable="@drawable/progress_style"
+            android:secondaryProgress="0"
+            android:thumb="@drawable/seekbar_thumb"
+            android:thumbOffset="0dip" />
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:text="00:00" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="2"
+        android:orientation="horizontal" >
+        <!-- 根据type来进行区分这是什么按钮，type
+        	需要在本文件头部定义一个命名空间
+        	xmlns:custom="http://schemas.android.com/apk/res/com.example.nature" 
+        	注意这里的最后一小部分必须是manifest中定义的包名
+        	-->
+
+<!-- 这4个自定义按钮不用，太丑了
+        <com.example.nature.view.CustomAudioIcon
+            android:id="@+id/btnMode"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="match_parent"           
+            Custom:type="mode"
+            Custom:color="#66DD22" />
+
+        <com.example.nature.view.CustomAudioIcon
+            android:id="@+id/btnPrevious"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            Custom:type="backward"
+            Custom:color="#66DD22" />
+
+        <com.example.nature.view.CustomAudioIcon
+            android:id="@+id/btnStartStop"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            Custom:type="start"
+            Custom:color="#66DD22" />
+
+        <com.example.nature.view.CustomAudioIcon
+            android:id="@+id/btnNext"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            Custom:type="forward"
+            Custom:color="#66DD22" /> -->
+        <ImageButton
+                android:id="@+id/play_pre"
+                android:layout_width="0dip"
+            	android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name"
+                android:onClick="pre"
+                android:src="@drawable/player_btn_pre_normal" />
+
+        <ImageButton
+                android:id="@+id/play_StartStop"
+                android:layout_width="0dip"
+            	android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name"
+                android:onClick="play"
+                android:src="@drawable/player_btn_play_normal" />
+
+        <ImageButton
+                android:id="@+id/play_next"
+                android:layout_width="0dip"
+            	android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name"
+                android:onClick="next"
+                android:src="@drawable/player_btn_next_normal" />
+
+            
+    </LinearLayout>
+
+</LinearLayout>

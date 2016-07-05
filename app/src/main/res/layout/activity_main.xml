@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+android:background="@drawable/detail_back"
+    >
+    <!-- TabHost必须包含一个 TabWidget和一个FrameLayout
+    android:background="@drawable/water"-->
+
+    <!-- android:src="@drawable/head2" -->
+    <TabHost
+        android:id="@+id/myTabHost"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_weight="8">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <!-- TabWidget的id属性必须为 @android:id/tabs -->
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="horizontal" />
+
+            <!-- FrameLayout的id属性必须为 @android:id/tabcontent -->
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0" >
+
+
+                <ExpandableListView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </ExpandableListView>
+
+                <ListView
+                    android:cacheColorHint="#00000002"
+                    android:id="@+id/lvSongs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    /><!-- 本来是0 -->
+
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+    <!--<ListView
+       android:id="@+id/lvSongs"
+       android:layout_width="match_parent"
+       android:layout_height="400dp"
+       android:layout_weight="8"
+       android:cacheColorHint="#00000000" />本来是0 -->
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:layout_weight="1" >
+        <!-- 本来是0 -->
+
+        <ImageView
+            android:id="@+id/btnDetail"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_margin="0dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"/>
+
+        <SeekBar
+            android:id="@+id/pbDuration"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="3dip"
+            android:layout_height="10dip"
+            android:layout_marginBottom="3dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btnDetail"
+            android:maxHeight="1dip"
+            android:minHeight="1dip"
+            android:progressDrawable="@drawable/progress_style"
+            android:thumbOffset="0dip"
+            android:thumb="@drawable/seekbar_thumb"/>
+
+        <TextView
+            android:id="@+id/tvCurrentMusic"
+            android:layout_width="190dp"
+            android:layout_height="32dip"
+            android:layout_alignBaseline="@+id/btnNext"
+            android:layout_toRightOf="@+id/btnDetail"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip" />
+
+        <Button
+            android:id="@+id/btnStartStop"
+            android:layout_width="32dip"
+            android:layout_height="32dip"
+            android:layout_alignBaseline="@+id/btnNext"
+            android:layout_below="@+id/pbDuration"
+            android:layout_toLeftOf="@+id/btnNext"
+            android:background="@drawable/play"
+            android:layout_marginRight="5dip"
+            />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/pbDuration"
+            android:layout_marginRight="20dip"
+            android:background="@drawable/forward" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
