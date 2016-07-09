@@ -95,14 +95,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
              * tab的使用
              *
              * */
-            TabHost tabHost = (TabHost) findViewById(R.id.myTabHost);
+//            TabHost tabHost = (TabHost) findViewById(R.id.myTabHost);
             // 如果不是继承TabActivity，则必须在得到tabHost之后，添加标签之前调用tabHost.setup()
-            tabHost.setup();
+//            tabHost.setup();
             // 这里content的设置采用了布局文件中的view
-            tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("歌          曲")
-                    .setContent(R.id.lvSongs));
-            tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("专          辑")
-                    .setContent(R.id.list));
+//            tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("歌          曲")
+//                    .setContent(R.id.lvSongs));
+//            tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("专          辑")
+//                    .setContent(R.id.list));
 
             MusicLoader musicLoader = new MusicLoader();
             musicList = musicLoader.getMusicList();
@@ -281,9 +281,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             });
             // groupLvSongs绑定数据
-            MyExAdapter ExlvSongsAdapter = new MyExAdapter(this, musicList);
-            groupLvSongs = (ExpandableListView) findViewById(R.id.list);
-            groupLvSongs.setAdapter(ExlvSongsAdapter);
+//            MyExAdapter ExlvSongsAdapter = new MyExAdapter(this, musicList);
+//            groupLvSongs = (ExpandableListView) findViewById(R.id.list);
+//            groupLvSongs.setAdapter(ExlvSongsAdapter);
             // groupLvSongs.setOnChildClickListener(new On)
         }
     // 获取歌手图片

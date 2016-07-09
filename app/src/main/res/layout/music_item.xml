@@ -6,7 +6,7 @@
     <ImageView
         android:id="@+id/albumPhoto"
         android:layout_width ="70dp"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:contentDescription="Album photo" />

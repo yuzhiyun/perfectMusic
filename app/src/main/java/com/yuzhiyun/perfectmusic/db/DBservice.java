@@ -46,7 +46,11 @@ public class DBservice {
                 list_data.setLrc(cursor.getString(cursor.getColumnIndex("lrc")));
                 list.add(list_data);
                 Log.i("数据库内容",list_data.getTitle()+"歌qu位置"+list_data.getUrl()+"歌词"+list_data.getLrc()+"时长"+list_data.getDuration());
+                if(2==list.size())
+                    return list;
             }
+//            由于只有两首歌，但是数据库里面包含多首歌的信息，所以就只取数据库中两首歌的信息算了
+
         }
         return list;
 
